@@ -15,13 +15,14 @@ git clone https://github.com/oliver-wilson-dev/settings.git ~/mac-setup-files
 # Git
 brew install git
 echo "Define your Git username"
-# read username
-# git config --global user.name "$username"
-git config --global user.name oliver-wilson-dev
+read username
+git config --global user.name "$username"
 echo "Define your Git email"
-# read email
-# git config --global user.name "$email"
-git config --global user.email contact.oliver.wilson@gmail.com
+read email
+git config --global user.name "$email"
+
+# git config --global user.name oliver-wilson-dev
+# git config --global user.email contact.oliver.wilson@gmail.com
 
 
 # zsh
@@ -55,10 +56,7 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 		cd ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting && git pull
 	fi
 # copy zsh settings over
-cd ~/mac-setup-files
-yes | cp .zshrc ~/.zshrc
-yes | cp vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json
-yes | cp -a DankMono-491/otf/. ~/Library/Fonts
+	yes | cp ~/mac-setup-files/.zshrc ~/.zshrc
 
 
 # Install yarn
@@ -73,49 +71,53 @@ brew install node
 
 # Visual Studio Code
 brew cask install visual-studio-code
-code --install-extension andrew-codes.cypress-snippets
-code --install-extension bierner.markdown-preview-github-styles
-code --install-extension christian-kohler.npm-intellisense
-code --install-extension christian-kohler.path-intellisense
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension eamidui.gitlens
-code --install-extension esbenp.prettier-vscode
-code --install-extension formukahendry.auto-close-tag
-code --install-extension GitHub.vscode-pull-request-github
-code --install-extension ngryman.codesandbox-theme
-code --install-extension Orta.vscode-jest
-code --install-extension PKief.material-icon-theme
-code --install-extension shinnn.stylelint
-code --install-extension shyykoserhiy.vscode-spotify
-code --install-extension streetsidesoftware.code-spell-checker
-code --install-extension Tyriar.sort-lines
-code --install-extension xabikos.JavaScriptSnippets
+# install extensions
+	code --install-extension andrew-codes.cypress-snippets
+	code --install-extension bierner.markdown-preview-github-styles
+	code --install-extension christian-kohler.npm-intellisense
+	code --install-extension christian-kohler.path-intellisense
+	code --install-extension dbaeumer.vscode-eslint
+	code --install-extension eamidui.gitlens
+	code --install-extension esbenp.prettier-vscode
+	code --install-extension formukahendry.auto-close-tag
+	code --install-extension GitHub.vscode-pull-request-github
+	code --install-extension ngryman.codesandbox-theme
+	code --install-extension Orta.vscode-jest
+	code --install-extension PKief.material-icon-theme
+	code --install-extension shinnn.stylelint
+	code --install-extension shyykoserhiy.vscode-spotify
+	code --install-extension streetsidesoftware.code-spell-checker
+	code --install-extension Tyriar.sort-lines
+	code --install-extension xabikos.JavaScriptSnippets
+# copy settings over
+	yes | cp ~/mac-setup-files/vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json
 
 
+# Install Programs
 # VirtualBox
-brew cask install virtualbox
+	brew cask install virtualbox
 
 # Browsers
-brew cask install google-chrome
-brew cask install firefox
-
-# Extras
-brew cask install charles
-brew cask install copyq
-brew cask install docker
-brew cask install github
-brew cask install insomnia
-brew cask install iterm2
-brew cask install postman
-brew cask install slack 
-brew cask install spotify
-brew cask install whatsapp
-brew cask install zeplin
+	brew cask install google-chrome
+	brew cask install firefox
+# Other	
+	brew cask install charles
+	brew cask install copyq
+	brew cask install docker
+	brew cask install github
+	brew cask install insomnia
+	brew cask install iterm2
+	brew cask install postman
+	brew cask install slack 
+	brew cask install spotify
+	brew cask install whatsapp
+	brew cask install zeplin
 
 # Mac settings
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+yes | cp -a ~/mac-setup-files/DankMono/otf/. ~/Library/Fonts
 
 # Make asos directory and clone repos into it
 read -p "Would you like to download some of the asos repos?" -n 1 -r
