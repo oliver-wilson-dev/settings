@@ -5,6 +5,10 @@
 export ZSH="/Users/oliverwilson/.oh-my-zsh"
 
 
+fpath=(/usr/local/share/zsh-completions $fpath)
+source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -110,7 +114,6 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
 
 
-
 # Add a second prompt line for the command
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
@@ -147,9 +150,13 @@ export NVM_DIR="$HOME/.nvm"
 alias test="jest --watch --coverage --onlyChanged"
 alias edit="code ~/.zshrc"
 
-
-fpath=(/usr/local/share/zsh-completions $fpath)
-source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fpath=(/usr/local/share/zsh-completions $fpath)
-ZSH_THEME="powerlevel9k/powerlevel9k"
-source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# cd to asos repos
+alias asos="cd ~/asos"
+alias bag="cd ~/asos/bag"
+alias checkout="cd ~/asos/checkout"
+alias pdp="cd ~/asos/pdp"
+alias plp="cd ~/asos/plp"
+alias saved-lists="cd ~/asos/saved-lists/application"
+# abbreviations of longer repo names
+alias sc="cd ~/asos/sitechrome"
+alias sl="cd ~/asos/saved-lists/application"
