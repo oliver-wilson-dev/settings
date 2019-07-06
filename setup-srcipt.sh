@@ -61,8 +61,8 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 # Install yarn
 brew install yarn
-yarn global install jest
-yarn global install eslint
+yarn global add jest
+yarn global add eslint
 
 
 # NodeJS / NPM
