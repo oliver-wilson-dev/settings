@@ -1,6 +1,17 @@
 #!/bin/sh
 
-# home-brew
+# check if something is already installed
+install_if_does_not_exist()
+{
+	if command -v "$1" >/dev/null 2>&1; then
+  		echo $1 'is already installed'
+	else
+		echo "installing" $1
+		brew install $1
+	fi
+}
+
+# Homebrew
 if test ! $(which brew); then
     echo "Installing homebrew..."
     yes '' | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -8,26 +19,44 @@ fi
 brew tap caskroom/cask
 brew tap caskroom/versions
 
-# clone setup files
+# Clone setup files
 rm -rf ~/mac-setup-files
 git clone https://github.com/oliver-wilson-dev/settings.git ~/mac-setup-files
+git config --global core.editor "code --wait"
 
-# Git
-brew install git
-echo "Define your Git username"
-read username
-git config --global user.name "$username"
-echo "Define your Git email"
-read email
-git config --global user.name "$email"
+# Install Git and set username and email
+install_if_does_not_exist git
+gitUsername="$(git config --global --get user.name)"
+gitEmail="$(git config --global --get user.email)"
+
+read -t 10 -p "Your git user.name is "${gitUsername}". Would you like to change it? [y/n]" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	echo "Define your Git username"
+	read username
+	git config --global user.name "$username"
+	gitUsername="$(git config --global --get user.name)"
+fi
+
+read -t 10 -p "Your git user.email is "${gitEmail}". Would you like to change it? [y/n]" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	echo "Define your Git email"
+	read email
+	git config --global user.name "$email"
+	gitEmail="$(git config --global --get user.email)"
+fi
+echo "Thanks. Your git user.name is '${gitUsername}' and your git user.email is '${gitEmail}'".
 
 # git config --global user.name oliver-wilson-dev
 # git config --global user.email contact.oliver.wilson@gmail.com
 
 
 # zsh
-brew install zsh
-brew install zsh-completions
+install_if_does_not_exist zsh
+install_if_does_not_exist zsh-completions
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # install powerline fonts
@@ -60,13 +89,12 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 
 # Install yarn
-brew install yarn
-yarn global add jest
-yarn global add eslint
-
+install_if_does_not_exist yarn
 
 # NodeJS / NPM
-brew install node
+install_if_does_not_exist node
+npm list -g | grep jest || npm install -g jest
+npm list -g | grep eslint || npm install -g eslint
 
 
 # Visual Studio Code
@@ -94,24 +122,34 @@ brew cask install visual-studio-code
 
 
 # Install Programs
-# VirtualBox
-	brew cask install virtualbox
 
 # Browsers
-	brew cask install google-chrome
-	brew cask install firefox
-# Other	
-	brew cask install charles
-	brew cask install copyq
-	brew cask install docker
-	brew cask install github
-	brew cask install insomnia
-	brew cask install iterm2
-	brew cask install postman
-	brew cask install slack 
-	brew cask install spotify
-	brew cask install whatsapp
-	brew cask install zeplin
+	BROWSERS=(
+		google-chrome
+		firefox
+	)
+	brew cask install ${BROWSERS[@]}
+
+# Other programs
+	OTHER_PROGRAMS=(
+		charles
+		copyq
+		docker
+		github
+		insomnia
+		iterm2
+		postman
+		slack 
+		spotify
+		whatsapp
+		zeplin
+	)
+
+	brew cask install ${OTHER_PROGRAMS[@]}
+
+# VirtualBox
+	brew cask install virtualbox
+	# could actually fetch the ie11 image and install it here too...
 
 # Mac settings
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
@@ -120,7 +158,7 @@ defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 yes | cp -a ~/mac-setup-files/DankMono/otf/. ~/Library/Fonts
 
 # Make asos directory and clone repos into it
-read -p "Would you like to download some of the asos repos?" -n 1 -r
+read -t 10 -p "Would you like to download some of the asos repos? [y/n]" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
