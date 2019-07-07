@@ -26,36 +26,30 @@ git config --global core.editor "code --wait"
 
 # Install Git and set username and email
 install_if_does_not_exist git
-gitUsername="$(git config --global --get user.name)"
-gitEmail="$(git config --global --get user.email)"
+GIT_USERNAME="$(git config --global --get user.name)"
+GIT_EMAIL="$(git config --global --get user.email)"
 
-read -t 30 -p "Your git user.name is "${gitUsername}". Would you like to change it? [y/n]" -n 1 -r
+read -t 60 -p "Your git user.name is "${GIT_USERNAME}". Would you like to change it? [y/n]" -n 1 -r SET_GIT_USERNAME_REPLY
 echo
-if [[ $REPLY =~ ^[Yy]$ ]]
+if [[ $SET_GIT_USERNAME_REPLY =~ ^[Yy]$ ]]
 then
 	echo "Define your Git username"
 	read username
 	git config --global user.name "$username"
-	gitUsername="$(git config --global --get user.name)"
+	GIT_USERNAME="$(git config --global --get user.name)"
 fi
 
-read -t 30 -p "Your git user.email is "${gitEmail}". Would you like to change it? [y/n]" -n 1 -r
+read -t 60 -p "Your git user.email is "${GIT_EMAIL}". Would you like to change it? [y/n]" -n 1 -r SET_GIT_EMAIL_REPLY
 echo
-if [[ $REPLY =~ ^[Yy]$ ]]
+if [[ $SET_GIT_EMAIL_REPLY =~ ^[Yy]$ ]]
 then
 	echo "Define your Git email"
 	read email
-	git config --global user.name "$email"
-	gitEmail="$(git config --global --get user.email)"
+	git config --global user.email "$email"
+	GIT_EMAIL="$(git config --global --get user.email)"
 fi
 
-newGitUsername="$(git config --global --get user.name)"
-newGitEmail="$(git config --global --get user.email)"
-
-echo "Thanks. Your git user.name is '${newGitUsername}' and your git user.email is '${newGitEmail}'".
-
-# git config --global user.name oliver-wilson-dev
-# git config --global user.email contact.oliver.wilson@gmail.com
+echo "Thanks. Your git user.name is '${GIT_USERNAME}' and your git user.email is '${GIT_EMAIL}'".
 
 
 # Install yarn
@@ -130,9 +124,9 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool false
 yes | cp -a ~/mac-setup-files/DankMono/otf/. ~/Library/Fonts
 
 # Make asos directory and clone repos into it
-read -t 60 -p "Would you like to download some of the asos repos? [y/n]" -n 1 -r
+read -t 60 -p "Would you like to download some of the asos repos? [y/n]" -n 1 -r CLONE_ASOS_REPOS_REPLY
 echo
-if [[ $REPLY =~ ^[Yy]$ ]]
+if [[ $CLONE_ASOS_REPOS_REPLY =~ ^[Yy]$ ]]
 then
 	mkdir ~/asos
 	cd ~/asos
