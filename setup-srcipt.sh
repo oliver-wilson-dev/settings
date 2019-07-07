@@ -152,9 +152,10 @@ brew cask install visual-studio-code
 	# could actually fetch the ie11 image and install it here too...
 
 # Mac settings
-defaults write com.apple.menuextra.battery ShowPercent -string "YES"
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 yes | cp -a ~/mac-setup-files/DankMono/otf/. ~/Library/Fonts
 
 # Make asos directory and clone repos into it
