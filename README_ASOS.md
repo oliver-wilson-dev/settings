@@ -1,5 +1,11 @@
 # settings
-Settings for any mac that I want to use
+Get my developer setup the way that I like it on a new mac.
+
+Installs `git`, `node`, `yarn`, `npm`, `homebrew`, `Google Chrome`, `firefox`, `virtualbox`, `charles`, `copyq`, `docker`, `github for desktop`, `insomnia`, `iterm2`, `postman`, `slack`, `spotify`, `whatsapp`, `zeplin`.
+
+Sets `zsh` as the default shell for your machine.
+
+Installs `Visual Studio Code` with some useful extensions, the `DankMono` font, and some opinionated settings.
 
 ## Prerequisites
 * You will need an asos github account with access to all of the repos in `asosteam`. Contact Dom Green or Tony Gorman if you don't already have access to these repositories in github.
