@@ -1,6 +1,8 @@
 # settings
 Get my developer setup the way that I like it on a new mac.
 
+If you would like to install asos repos, [please read this readme instead](README_ASOS.md).
+
 Installs `git`, `node`, `yarn`, `npm`, `homebrew`, `Google Chrome`, `firefox`, `virtualbox`, `charles`, `copyq`, `docker`, `github for desktop`, `insomnia`, `iterm2`, `postman`, `slack`, `spotify`, `whatsapp`, `zeplin`.
 
 Sets `zsh` as the default shell for your machine.
