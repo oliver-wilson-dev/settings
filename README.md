@@ -32,6 +32,6 @@ Disclaimer: you should have some settings files downloaded into the `~/mac-setup
 * `Press the apple button in the top left of the screen -> Reboot...`
 
 ## Some useful links
-* [Download virtualbox](https://www.virtualbox.org/wiki/Downloads)
-* [Microsoft VM download for virtualbox](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)
+* [Download virtualbox](https://www.virtualbox.org/wiki/Downloads) - the cask requires manual intervention, which is distracting from the rest of the setup script.
+* [Microsoft VM download for virtualbox](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/) - this takes quite a while to download.
 * [Forward network traffic from mac to VM](https://medium.com/@urubuz/accessing-localhost-in-mac-from-windows-vm-in-virtualbox-312a3de6fedb)
