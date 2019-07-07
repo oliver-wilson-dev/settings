@@ -57,10 +57,12 @@ install_if_does_not_exist yarn
 
 # NodeJS / NPM
 install_if_does_not_exist node
-npm list -g | grep jest || npm install -g jest
-npm list -g | grep eslint || npm install -g eslint
+npm list -g jest && echo "jest is installed globally" || echo "installing jest globally" && npm install -g jest
+npm list -g eslint && echo "eslint is installed globally" || echo "installing eslint globally" && npm install -g eslint
 
 # nvm (node version manager)
+chown -R $(whoami) /usr/local/lib/pkgconfig
+chmod u+w /usr/local/lib/pkgconfig
 install_if_does_not_exist nvm
 mkdir ~/.nvm
 
