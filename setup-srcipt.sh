@@ -54,40 +54,6 @@ echo "Thanks. Your git user.name is '${gitUsername}' and your git user.email is 
 # git config --global user.email contact.oliver.wilson@gmail.com
 
 
-# zsh
-install_if_does_not_exist zsh
-install_if_does_not_exist zsh-completions
-# install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-# install powerline fonts
-	# clone
-	git clone https://github.com/powerline/fonts.git --depth=1
-	# install
-	cd fonts
-	./install.sh
-	# clean-up a bit
-	cd ..
-	rm -rf fonts
-# install powerlevel9k theme
-	if git clone --depth=1 https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k; then :
-	else
-		cd ~/.oh-my-zsh/custom/themes/powerlevel9k && git pull
-	fi
-
-# install zsh plugins
-	if git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions; then :
-	else
-		cd ~/.oh-my-zsh/plugins/zsh-autosuggestions && git pull
-	fi
-
-	if git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting; then :
-	else
-		cd ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting && git pull
-	fi
-# copy zsh settings over
-	yes | cp ~/mac-setup-files/.zshrc ~/.zshrc
-
-
 # Install yarn
 install_if_does_not_exist yarn
 
@@ -155,6 +121,7 @@ brew cask install visual-studio-code
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+defaults write com.apple.LaunchServices LSQuarantine -bool false
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 yes | cp -a ~/mac-setup-files/DankMono/otf/. ~/Library/Fonts
 
@@ -181,3 +148,36 @@ then
 	git clone https://$username:$password@github.com/asosteam/asos-web-site-chrome-client-node.git ./sitechrome/client
 	git clone https://$username:$password@github.com/asosteam/asos-web-site-chrome-publisher.git ./sitechrome/publisher
 fi
+
+# zsh
+install_if_does_not_exist zsh
+install_if_does_not_exist zsh-completions
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# install powerline fonts
+	# clone
+	git clone https://github.com/powerline/fonts.git --depth=1
+	# install
+	cd fonts
+	./install.sh
+	# clean-up a bit
+	cd ..
+	rm -rf fonts
+# install powerlevel9k theme
+	if git clone --depth=1 https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k; then :
+	else
+		cd ~/.oh-my-zsh/custom/themes/powerlevel9k && git pull
+	fi
+
+# install zsh plugins
+	if git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions; then :
+	else
+		cd ~/.oh-my-zsh/plugins/zsh-autosuggestions && git pull
+	fi
+
+	if git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting; then :
+	else
+		cd ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting && git pull
+	fi
+# copy zsh settings over
+	yes | cp ~/mac-setup-files/.zshrc ~/.zshrc
