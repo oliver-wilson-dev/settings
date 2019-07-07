@@ -64,6 +64,7 @@
     "eslint.alwaysShowStatus": true,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
+    "explorer.openEditors.visible": 0,
     "files.autoSave": "off",
     "git.allowForcePush": true,
     "git.autofetch": true,
