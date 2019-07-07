@@ -119,9 +119,6 @@ brew cask install visual-studio-code
 
 	brew cask install ${OTHER_PROGRAMS[@]}
 
-# VirtualBox
-	brew cask install virtualbox
-	# could actually fetch the ie11 image and install it here too...
 
 # Mac settings
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
