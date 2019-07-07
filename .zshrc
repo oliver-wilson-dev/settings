@@ -6,8 +6,6 @@ export ZSH="/Users/oliverwilson/.oh-my-zsh"
 
 
 fpath=(/usr/local/share/zsh-completions $fpath)
-source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -65,7 +63,6 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -101,9 +98,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# Reload the plugin to highlight the commands each time Iterm2 starts 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 ### VISUAL CUSTOMISATION ### 
@@ -141,7 +135,6 @@ echo -e "\033]6;1;bg;red;brightness;18\a"
 echo -e "\033]6;1;bg;green;brightness;26\a"
 echo -e "\033]6;1;bg;blue;brightness;33\a"
 POWERLEVEL9K_MODE='nerdfont-complete'
-source  ~/powerlevel9k/powerlevel9k.zsh-theme
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
