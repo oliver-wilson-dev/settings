@@ -60,6 +60,9 @@ install_if_does_not_exist node
 npm list -g | grep jest || npm install -g jest
 npm list -g | grep eslint || npm install -g eslint
 
+# nvm (node version manager)
+install_if_does_not_exist nvm
+mkdir ~/.nvm
 
 # Visual Studio Code
 brew cask install visual-studio-code

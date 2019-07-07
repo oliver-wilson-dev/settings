@@ -5,6 +5,10 @@ ZSH_DISABLE_COMPFIX="true"
 export ZSH="/Users/oliverwilson/.oh-my-zsh"
 
 
+# NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Set name of the theme to load. Optionally, if you set this to "random"
