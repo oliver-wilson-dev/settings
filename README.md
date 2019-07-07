@@ -5,7 +5,7 @@ Installs `git`, `node`, `yarn`, `npm`, `homebrew`, `Google Chrome`, `firefox`, `
 
 Sets `zsh` as the default shell for your machine.
 
-Installs `Visual Studio Code` with some useful extensions, the `DankMono` font, and some opionionated settings.
+Installs `Visual Studio Code` with some useful extensions, the `DankMono` font, and some opinionated settings.
 
 ## Prerequisites
 * Don't leave your mac as you will be required to enter your password a few times and will be asked to enter/configure git credentials.
