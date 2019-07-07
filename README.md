@@ -3,7 +3,7 @@ Get my developer setup the way that I like it on a new mac.
 
 If you would like to install asos repos, [please read this readme instead](README_ASOS.md).
 
-Installs `git`, `node`, `yarn`, `npm`, `homebrew`, `Google Chrome`, `firefox`, `virtualbox`, `charles`, `copyq`, `docker`, `github for desktop`, `insomnia`, `iterm2`, `postman`, `slack`, `spotify`, `whatsapp`, `zeplin`.
+Installs `git`, `node`, `yarn`, `npm`, `homebrew`, `Google Chrome`, `firefox`, `charles`, `copyq`, `docker`, `github for desktop`, `insomnia`, `iterm2`, `postman`, `slack`, `spotify`, `whatsapp`, `zeplin`.
 
 Sets `zsh` as the default shell for your machine.
 
@@ -32,4 +32,6 @@ Disclaimer: you should have some settings files downloaded into the `~/mac-setup
 * `Press the apple button in the top left of the screen -> Reboot...`
 
 ## Some useful links
+* [Download virtualbox](https://www.virtualbox.org/wiki/Downloads)
+* [Microsoft VM download for virtualbox](https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/)
 * [Forward network traffic from mac to VM](https://medium.com/@urubuz/accessing-localhost-in-mac-from-windows-vm-in-virtualbox-312a3de6fedb)
