@@ -19,11 +19,6 @@ fi
 brew tap caskroom/cask
 brew tap caskroom/versions
 
-# Clone setup files
-rm -rf ~/mac-setup-files
-git clone https://github.com/oliver-wilson-dev/settings.git ~/mac-setup-files
-git config --global core.editor "code --wait"
-
 # Install Git and set username and email
 install_if_does_not_exist git
 GIT_USERNAME="$(git config --global --get user.name)"
@@ -51,20 +46,28 @@ fi
 
 echo "Thanks. Your git user.name is '${GIT_USERNAME}' and your git user.email is '${GIT_EMAIL}'".
 
+# Clone setup files
+rm -rf ~/mac-setup-files
+git clone https://github.com/oliver-wilson-dev/settings.git ~/mac-setup-files
+git config --global core.editor "code --wait"
+
 
 # Install yarn
 install_if_does_not_exist yarn
+
 
 # NodeJS / NPM
 install_if_does_not_exist node
 npm list -g jest && echo "jest is installed globally" || echo "installing jest globally" && npm install -g jest
 npm list -g eslint && echo "eslint is installed globally" || echo "installing eslint globally" && npm install -g eslint
 
+
 # nvm (node version manager)
 chown -R $(whoami) /usr/local/lib/pkgconfig
 chmod u+w /usr/local/lib/pkgconfig
-install_if_does_not_exist nvm
 mkdir ~/.nvm
+install_if_does_not_exist nvm
+
 
 # Visual Studio Code
 brew cask install visual-studio-code
@@ -156,7 +159,7 @@ fi
 install_if_does_not_exist zsh
 install_if_does_not_exist zsh-completions
 # install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # install powerline fonts
 	# clone
 	git clone https://github.com/powerline/fonts.git --depth=1
@@ -179,3 +182,5 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 	fi
 # copy zsh settings over
 	yes | cp ~/mac-setup-files/.zshrc ~/.zshrc
+
+chsh -s "$(command -v zsh)" "${USER}"
