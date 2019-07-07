@@ -129,6 +129,7 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 defaults write NSGlobalDomain AppleShowAllExtensions -bool false
+killall SystemUIServer
 yes | cp -a ~/mac-setup-files/DankMono/otf/. ~/Library/Fonts
 
 # Make asos directory and clone repos into it
