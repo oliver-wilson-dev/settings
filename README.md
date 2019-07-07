@@ -1,4 +1,4 @@
-# settings
+# Settings
 Get my developer setup the way that I like it on a new mac.
 
 If you would like to install asos repos, [please read this readme instead](README_ASOS.md).
@@ -12,13 +12,13 @@ Installs `Visual Studio Code` with some useful extensions, the `DankMono` font, 
 ## Prerequisites
 * Don't leave your mac as you will be required to enter your password a few times and will be asked to enter/configure git credentials.
 
-## manual steps before installation
+## Manual steps before installation
 * Download [this gist](https://gist.github.com/oliver-wilson-dev/473ff116e6cc56a81e596c3392e65cf8). 
 
 * Open the terminal and go to the directory where you saved [the gist](https://gist.github.com/oliver-wilson-dev/473ff116e6cc56a81e596c3392e65cf8) and run `sh setup.sh`.
   * You might need to extract the file if you've downloaded it as a zip.
 
-## manual steps after installation
+## Manual steps after installation
 Disclaimer: you should have some settings files downloaded into the `~/mac-setup-files` directory.
 
 ### iTerm2
