@@ -29,7 +29,7 @@ install_if_does_not_exist git
 gitUsername="$(git config --global --get user.name)"
 gitEmail="$(git config --global --get user.email)"
 
-read -t 10 -p "Your git user.name is "${gitUsername}". Would you like to change it? [y/n]" -n 1 -r
+read -t 30 -p "Your git user.name is "${gitUsername}". Would you like to change it? [y/n]" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -39,7 +39,7 @@ then
 	gitUsername="$(git config --global --get user.name)"
 fi
 
-read -t 10 -p "Your git user.email is "${gitEmail}". Would you like to change it? [y/n]" -n 1 -r
+read -t 30 -p "Your git user.email is "${gitEmail}". Would you like to change it? [y/n]" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -48,7 +48,11 @@ then
 	git config --global user.name "$email"
 	gitEmail="$(git config --global --get user.email)"
 fi
-echo "Thanks. Your git user.name is '${gitUsername}' and your git user.email is '${gitEmail}'".
+
+newGitUsername="$(git config --global --get user.name)"
+newGitEmail="$(git config --global --get user.email)"
+
+echo "Thanks. Your git user.name is '${newGitUsername}' and your git user.email is '${newGitEmail}'".
 
 # git config --global user.name oliver-wilson-dev
 # git config --global user.email contact.oliver.wilson@gmail.com
@@ -126,7 +130,7 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 yes | cp -a ~/mac-setup-files/DankMono/otf/. ~/Library/Fonts
 
 # Make asos directory and clone repos into it
-read -t 10 -p "Would you like to download some of the asos repos? [y/n]" -n 1 -r
+read -t 60 -p "Would you like to download some of the asos repos? [y/n]" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
