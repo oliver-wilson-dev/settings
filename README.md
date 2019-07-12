@@ -25,19 +25,11 @@ This process does the following tasks:
 
 * Don't leave your mac as you will be required to enter your password a few times and will be asked to enter/configure git credentials.
 
-## Manual steps before installation
+## Running the script
 * Open the Terminal app and run:
 ```console
-curl  -o ~/Desktop/setup.sh https://raw.githubusercontent.com/oliver-wilson-dev/settings/master/scripts/setup.sh
+caffeinate sh -c "$(curl -fsSL https://raw.githubusercontent.com/oliver-wilson-dev/settings/master/scripts/setup.sh)"
 ```
-this will download the `setup.sh` script in this repo for you, so you don't need `git` to obtain this script.
-
-* Open the terminal and go to the directory where you saved the script above (if you didn't change the command above, `cd` into `~/Desktop`) and run:
-```console
-caffeinate sh setup.sh
-```
-
-
 ## Manual steps after installation
 Disclaimer: you should have some settings files downloaded into the `~/mac-setup-files` directory.
 
