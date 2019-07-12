@@ -48,7 +48,7 @@ echo "Thanks. Your git user.name is '${GIT_USERNAME}' and your git user.email is
 
 # Clone setup files
 rm -rf ~/mac-setup-files
-git clone https://github.com/oliver-wilson-dev/settings.git ~/mac-setup-files
+git clone https://github.com/asos-oliverwilson/setup-mac.git ~/mac-setup-files
 git config --global core.editor "code --wait"
 
 
@@ -126,8 +126,9 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 defaults write NSGlobalDomain AppleShowAllExtensions -bool false
+defaults write com.apple.screencapture location ~/Desktop/screenshots
 killall SystemUIServer
-yes | cp -a ~/mac-setup-files/DankMono/otf/. ~/Library/Fonts
+yes | cp -a ~/mac-setup-files/fonts/DankMono/otf/. ~/Library/Fonts
 
 # Make asos directory and clone repos into it
 read -t 60 -p "Would you like to download some of the asos repos? [y/n]" -n 1 -r CLONE_ASOS_REPOS_REPLY
@@ -179,6 +180,6 @@ RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-
 		cd ~/.oh-my-zsh/plugins/zsh-autosuggestions && git pull
 	fi
 # copy zsh settings over
-	yes | cp ~/mac-setup-files/.zshrc ~/.zshrc
+	yes | cp ~/mac-setup-files/zsh/.zshrc ~/.zshrc
 
 chsh -s "$(command -v zsh)" "${USER}"
