@@ -28,13 +28,13 @@ This process does the following tasks:
 ## Manual steps before installation
 * Open the Terminal app and run:
 ```console
-curl  -o ~/Desktop/setup.sh https://raw.githubusercontent.com/asos-oliverwilson/setup-mac/master/scripts/setup.sh
+curl  -o ~/Desktop/setup.sh https://raw.githubusercontent.com/oliver-wilson-dev/settings/master/scripts/setup.sh
 ```
 this will download the `setup.sh` script in this repo for you, so you don't need `git` to obtain this script.
 
 * Open the terminal and go to the directory where you saved the script above (if you didn't change the command above, `cd` into `~/Desktop`) and run:
 ```console
-sh setup.sh
+caffeinate sh setup.sh
 ```
 
 

@@ -77,9 +77,9 @@ brew cask install visual-studio-code
 	code --install-extension christian-kohler.npm-intellisense
 	code --install-extension christian-kohler.path-intellisense
 	code --install-extension dbaeumer.vscode-eslint
-	code --install-extension eamidui.gitlens
+	code --install-extension eamodio.gitlens
 	code --install-extension esbenp.prettier-vscode
-	code --install-extension formukahendry.auto-close-tag
+	code --install-extension formulahendry.auto-close-tag
 	code --install-extension GitHub.vscode-pull-request-github
 	code --install-extension ngryman.codesandbox-theme
 	code --install-extension Orta.vscode-jest
