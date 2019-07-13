@@ -104,6 +104,7 @@ brew cask install visual-studio-code
 
 # Other programs
 	OTHER_PROGRAMS=(
+		alfred
 		charles
 		copyq
 		docker
