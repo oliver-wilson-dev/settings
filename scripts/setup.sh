@@ -16,8 +16,8 @@ if test ! $(which brew); then
     echo "Installing homebrew..."
     yes '' | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
-brew tap caskroom/cask
-brew tap caskroom/versions
+brew tap homebrew/cask-cask
+brew tap homebrew/cask-versions
 
 # Install Git and set username and email
 install_if_does_not_exist git
