@@ -109,8 +109,10 @@ brew cask install visual-studio-code
 		copyq
 		docker
 		github
+		google-hangouts
 		insomnia
 		iterm2
+		notion
 		postman
 		slack 
 		spotify
