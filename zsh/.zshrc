@@ -148,12 +148,4 @@ alias test="jest --watch --coverage --onlyChanged"
 alias edit="code ~/.zshrc"
 
 # cd to asos repos
-alias asos="cd ~/asos"
-alias bag="cd ~/asos/bag"
-alias checkout="cd ~/asos/checkout"
-alias pdp="cd ~/asos/pdp"
-alias plp="cd ~/asos/plp"
-alias saved-lists="cd ~/asos/saved-lists/application"
-# abbreviations of longer repo names
-alias sc="cd ~/asos/sitechrome"
-alias sl="cd ~/asos/saved-lists/application"
+alias nr="npm run"
