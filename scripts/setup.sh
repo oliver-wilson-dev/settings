@@ -49,7 +49,12 @@ echo "Thanks. Your git user.name is '${GIT_USERNAME}' and your git user.email is
 # Clone setup files
 rm -rf ~/mac-setup-files
 git clone https://github.com/asos-oliverwilson/setup-mac.git ~/mac-setup-files
+
+# Set default git editor to be vscode
 git config --global core.editor "code --wait"
+
+# Set default upstream branch to avoid --set-upstream message on first push
+git config --global push.default current
 
 
 # Install yarn
