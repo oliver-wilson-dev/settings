@@ -75,7 +75,7 @@ install_if_does_not_exist nvm
 
 
 # Visual Studio Code
-brew cask install visual-studio-code
+brew install --cask visual-studio-code
 # install extensions
 	code --install-extension andrew-codes.cypress-snippets
 	code --install-extension bierner.markdown-preview-github-styles
@@ -105,7 +105,7 @@ brew cask install visual-studio-code
 		google-chrome
 		firefox
 	)
-	brew cask install ${BROWSERS[@]}
+	brew install --cask ${BROWSERS[@]}
 
 # Other programs
 	OTHER_PROGRAMS=(
@@ -125,7 +125,7 @@ brew cask install visual-studio-code
 		zeplin
 	)
 
-	brew cask install ${OTHER_PROGRAMS[@]}
+	brew install --cask ${OTHER_PROGRAMS[@]}
 
 
 # Mac settings
