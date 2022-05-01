@@ -48,7 +48,7 @@ echo "Thanks. Your git user.name is '${GIT_USERNAME}' and your git user.email is
 
 # Clone setup files
 rm -rf ~/mac-setup-files
-git clone https://github.com/asos-oliverwilson/setup-mac.git ~/mac-setup-files
+git clone https://github.com/oliver-wilson-dev/settings.git ~/mac-setup-files
 
 # Set default git editor to be vscode
 git config --global core.editor "code --wait"
@@ -137,30 +137,6 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool false
 defaults write com.apple.screencapture location ~/Desktop/screenshots
 killall SystemUIServer
 yes | cp -a ~/mac-setup-files/fonts/DankMono/otf/. ~/Library/Fonts
-
-# Make asos directory and clone repos into it
-read -t 60 -p "Would you like to download some of the asos repos? [y/n]" -n 1 -r CLONE_ASOS_REPOS_REPLY
-echo
-if [[ $CLONE_ASOS_REPOS_REPLY =~ ^[Yy]$ ]]
-then
-	mkdir ~/asos
-	cd ~/asos
-	mkdir ./sitechrome
-	mkdir ./saved-lists
-	echo "Enter your git username"
-	read username
-	echo "Enter your git password (note, if you are trying to clone a repo that requires an access token, enter that instead.)"
-	read password
-	git clone https://$username:$password@github.com/asosteam/asos-web-my-account.git my-account
-	git clone https://$username:$password@github.com/asosteam/asos-web-bag.git bag
-	git clone https://$username:$password@github.com/asosteam/asos-web-checkout.git checkout
-	git clone https://$username:$password@github.com/asosteam/asos-web-product-listing-page.git plp
-	git clone https://$username:$password@github.com/asosteam/asos-web-productpage.git pdp
-	git clone https://$username:$password@github.com/asosteam/asos-web-saved-lists.git ./saved-lists/application
-	git clone https://$username:$password@github.com/asosteam/asos-web-saved-lists-stubs.git ./saved-lists/stubs
-	git clone https://$username:$password@github.com/asosteam/asos-web-site-chrome-client-node.git ./sitechrome/client
-	git clone https://$username:$password@github.com/asosteam/asos-web-site-chrome-publisher.git ./sitechrome/publisher
-fi
 
 # zsh
 install_if_does_not_exist zsh
